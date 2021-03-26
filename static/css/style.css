@@ -7,16 +7,6 @@ body {
 	text-align: justify;
 }
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  	body {
-  		font-size: 48px;
-  		padding: 0;
-  	}
-}
-
 
 h1, h2, h3, h4, .card-title, .page-title {
 	font-family: "Raleway";
@@ -182,4 +172,29 @@ ul.technology-list li:not(:last-child)::after {
 .block-quote .quote-source {
 	font-style: normal;
 	color: grey;
+}
+
+
+/* Phone */ 
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  	
+  	body {
+  		font-size: 48px;
+  		padding: 0;
+  	}
+
+  	.container {
+      	padding: 0;
+      	margin: 0;
+    }
+
+    .navbar-fixed {
+   		margin-left: 0;
+     	margin-right: 0;
+      	margin-bottom: 0;
+    }
 }
