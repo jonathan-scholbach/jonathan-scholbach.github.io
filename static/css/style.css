@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro|Raleway');
+
+body {
+	padding-top: 100px; /* The height of the navbar */
+	font-family: "Source Sans Pro";
+	font-size: 28px;
+	text-align: justify;
+}
+
+
+h1, h2, h3, h4, .card-title, .page-title {
+	font-family: "Raleway";
+}
+
+h1 {
+	font-size: 60px;
+	margin-top: 60px;
+}
+
+nav {
+	margin-bottom: 60px;
+}
+
+.navbar-light {
+	background-color: white;
+}
+
+.project, .technology {
+	padding: 24px;
+	margin-top: 24px;
+	border: 1px solid black;	
+
+	text-align: center;
+	min-width: 350px;
+	
+	background: #fff;
+
+	display: inline-block;
+	margin: 1rem;
+	position: relative;
+}
+
+
+.card-title, .project-date, .project-description, .project-contribution, .project-technologies {
+	margin-bottom: 24px;
+}
+
+.card-title a {
+	text-decoration: none;
+	color: black;
+}
+
+.card-title a::hover {
+	text-decoration: none;
+	color: black;	
+}
+
+.card-title {
+	font-size: 48px;
+}
+
+.card-title img {
+	width: 60%;
+}
+
+.project-date {
+}
+
+.project-website {
+
+}
+
+.project-repository a {
+	color: grey;
+	
+}
+
+.project-description {
+	font-weight: bold;
+}
+
+.project-technologies {
+	margin: auto;
+	text-align: center;
+}
+
+.project-technologies ul li, code {
+	font-family: "FMono-Regular", "Menlo" , "Monaco", "Consolas", "Liberation Mono","Courier New", monospace;
+	font-weight: normal;
+	font-size: 87.5%;
+	color: #e83e8c;
+	border: 1px solid black;
+	border-radius: 6px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.project-technologies ul li, ul.technology-list li {
+	list-style-type: none;
+	display: inline;
+	white-space: nowrap;
+}
+
+ul.technology-list li:not(:last-child)::after {
+	content:" ·";
+	margin-right: 6px;
+	margin-left: 6px;
+
+}
+
+.project-contribution {
+	text-align: left;
+}
+
+.page-title {
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 120px;
+
+	position: relative;
+
+	text-align: center;
+	font-size: 80px;
+	text-transform: uppercase;
+	letter-spacing: 32px;
+
+}
+
+.page-title::after {
+	content: "";
+	position: relative;
+	display: block;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+
+	margin-top: 20px;
+	margin-bottom: 40px;
+
+	height: 6px;
+	background-color: black;
+	top: 100%;
+    left: 0;
+}
+
+.round-image {
+	margin: auto;
+  	width: 400px;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.round-image img {
+	display: inline;
+	margin: 0 auto;
+	height: 100%;
+	width: auto;
+}
+
+.block-quote {
+	margin-top: 24px;
+	margin-bottom: 24px;
+
+	border-left: 4px solid #e83e8c;
+	padding-left: 24px;
+
+	font-style: italic;
+}
+
+.block-quote .quote-source {
+	font-style: normal;
+	color: grey;
+}
