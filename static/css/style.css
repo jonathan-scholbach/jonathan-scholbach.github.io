@@ -184,8 +184,8 @@ ul.technology-list li:not(:last-child)::after {
   	
   	body {
   		font-size: 48px;
-  		padding-left: 12px;
-      	padding-right: 12px;
+  		padding-left: 36px;
+      	padding-right: 36px;
       	margin-right: 0;
       	margin-left: 0;
   	}
