@@ -7,52 +7,79 @@
   --color-muted: #93A1A1;
 
   --font-size: 16px;
+  --font: "Noto Sans", sans-serif;
+  --font-mono: "Noto Sans Mono", monospace;
 }
 
-html {
-  font-family: "Noto Sans", sans-serif;
+html, body {
+  background-color: var(--color-bg) !important;
   font-size: var(--font-size);
   line-height: 1.5;
 }
 
-@media (min-width: 38em) {
-  html {
-    --font-size: 20px;
+body, .sidebar {
+  font-family: var(--font);
+}
+
+.sidebar {
+  background: var(--color-bg-darker);
+}
+
+.sidebar a {
+  color: var(--color-fg);
+}
+
+.sidebar a:hover {
+  background: var(--color-bg);
+}
+
+@media (min-width: 56em) {
+  .container {
+    max-width: 38rem;
   }
 }
-
-.masthead {
-  border: none;
+h1 {
+  font-size: calc(2.2*var(--font-size));
 }
 
-.masthead {
-  padding-top:    1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid #eee;
+h2 {
+  font-size: calc(1.8*var(--font-size));
 }
-.masthead-title {
-  margin-top: 0;
-  margin-bottom: 0;
+
+h3 {
+  font-size: calc(1.5*var(--font-size));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font);
   font-weight: 400;
   color: var(--color-emph);
   width: 100%;
 }
-.masthead-title a {
+
+/* INDEX PAGE */
+
+.index .post {
+  border: 1px solid var(--color-fg);
+  padding: var(--font-size) var(--font-size) 0 var(--font-size);
+}
+
+.index .post-title {
+  font-size: calc(1.5*var(--font-size));
+  margin-bottom: calc(0.5*var(--font-size));
+}
+
+.index .post-title a {
   color: var(--color-emph);
 }
 
-.masthead-title .masthead-tagline {
-  color: black;
-  margin-left: auto;
-  text-align: right;
-}
 
-
+/* POST */
 .page,
 .post {
   margin-bottom: 4em;
   text-align: justify;
+  hyphens: auto;
 }
 
 .post {
@@ -65,6 +92,17 @@ html {
   padding-right: 2rem;
   padding-top: 6rem;
   position: fixed;
+  font-size: 90%;
+  display: none;
+}
+
+.toc a {
+  color: var(--color-muted) !important;
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--color-fg) !important;
 }
 
 @media (min-width: 38rem) {
@@ -83,6 +121,7 @@ html {
     width: 40rem;
   }
   .toc {
+    display: block;
     width: 20rem;
     margin-left: -24rem;
     padding-right: 2rem;
@@ -119,30 +158,39 @@ html {
   color: var(--color-fg)
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
-  color: var(--color-emph);
-  width: 100%;
-}
 
-code {
-  font-family: "Noto Sans Mono", monospace;
-  color: var(--color-emph);
-  background-color: var(--color-bg-darker);
-}
-
-figure {
-  margin-left: 0;
-  margin-right: 0;
-  border: 2px solid var(--color-fg);
-}
-
-/* Image And Figure Captions
+/* Images, Code Blocks And Figures
  * We use em strong as the signal for making the text a caption
  * The figure and images don't have a botto margin.
  * The margin is added by the following paragraph, but only if it is not a
  * caption.
  * */
+
+code {
+  font-family: var(--font-mono);
+  color: var(--color-emph);
+  background-color: var(--color-bg-darker);
+  white-space: nowrap;
+}
+
+pre code {
+  white-space: pre;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figure.highlight {
+  border: 1px solid var(--color-muted)!important;
+}
+
+p img {
+  margin-left: auto!important;
+  margin-right: auto!important;
+}
+
 p img,
 figure {
   margin-bottom: 0 !important;
@@ -150,7 +198,9 @@ figure {
 
 em strong {
   font-weight: 400;
-  font-size: 80%;
+  font-size: calc(0.8*var(--font-size));
+  text-align: center !important;
+  line-height: calc(0.8*var(--font-size)) !important;
 }
 
 p img + p,
@@ -158,9 +208,27 @@ figure + p { /* Non-caption paragraphs */
   margin-top: var(--font-size);
 }
 
-p:has(em strong) { /* caption paragraph */
-  text-align: center;
-  margin-top: calc(-1*var(--font-size));
-  display: inline-block;
+p:has(strong) { /* caption paragraph */
   width: 100%;
+  text-align: center !important;
+  margin-top: 0;
+  display: inline-block;
+}
+
+.container.content {
+  padding-top: calc(2*var(--font-size));
+}
+
+.footnotes {
+  border-top: 2px solid var(--color-muted)!important;
+  padding-top: var(--font-size);
+  margin-top: calc(2*var(--font-size));
+  font-size: calc(0.8*var(--font-size));
+}
+
+.flowers {
+  width: 100%;
+  font-size: calc(5*var(--font-size));
+  text-align: center;
+  margin-bottom: var(--font-size);
 }
