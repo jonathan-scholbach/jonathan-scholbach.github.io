@@ -1,0 +1,166 @@
+:root {
+  --color-bg: #fdf6e3;
+  --color-bg-darker: #faeabf;
+  --color-fg: #333;
+  --color-emph: #cb4b16;
+  --color-link: #268bd2;
+  --color-muted: #93A1A1;
+
+  --font-size: 16px;
+}
+
+html {
+  font-family: "Noto Sans", sans-serif;
+  font-size: var(--font-size);
+  line-height: 1.5;
+}
+
+@media (min-width: 38em) {
+  html {
+    --font-size: 20px;
+  }
+}
+
+.masthead {
+  border: none;
+}
+
+.masthead {
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #eee;
+}
+.masthead-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: var(--color-emph);
+  width: 100%;
+}
+.masthead-title a {
+  color: var(--color-emph);
+}
+
+.masthead-title .masthead-tagline {
+  color: black;
+  margin-left: auto;
+  text-align: right;
+}
+
+
+.page,
+.post {
+  margin-bottom: 4em;
+  text-align: justify;
+}
+
+.post {
+  width: 28rem;
+}
+
+.toc {
+  width: 14rem;
+  margin-left: -21rem;
+  padding-right: 2rem;
+  padding-top: 6rem;
+  position: fixed;
+}
+
+@media (min-width: 38rem) {
+  .post {
+    width: 28rem;
+  }
+
+  .toc {
+    width: 8rem;
+    margin-left: -10rem;
+    padding-right: 0.5rem;
+  }
+}
+@media (min-width: 82rem) {
+  .post {
+    width: 40rem;
+  }
+  .toc {
+    width: 20rem;
+    margin-left: -24rem;
+    padding-right: 2rem;
+  }
+}
+
+.toc ul {
+  list-style-type: None;
+  padding-left: 12px;
+}
+
+.toc ul li {
+
+  margin-bottom: 8px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.toc a {
+  color: var(--color-fg);
+}
+
+.post-title {
+  font-weight: 800;
+  margin-bottom: calc(2*var(--font-size));
+}
+
+.post-title .post-subtitle {
+  font-weight: 200;
+}
+
+.post-date {
+  text-align: right;
+  color: var(--color-fg)
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  color: var(--color-emph);
+  width: 100%;
+}
+
+code {
+  font-family: "Noto Sans Mono", monospace;
+  color: var(--color-emph);
+  background-color: var(--color-bg-darker);
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+  border: 2px solid var(--color-fg);
+}
+
+/* Image And Figure Captions
+ * We use em strong as the signal for making the text a caption
+ * The figure and images don't have a botto margin.
+ * The margin is added by the following paragraph, but only if it is not a
+ * caption.
+ * */
+p img,
+figure {
+  margin-bottom: 0 !important;
+}
+
+em strong {
+  font-weight: 400;
+  font-size: 80%;
+}
+
+p img + p,
+figure + p { /* Non-caption paragraphs */
+  margin-top: var(--font-size);
+}
+
+p:has(em strong) { /* caption paragraph */
+  text-align: center;
+  margin-top: calc(-1*var(--font-size));
+  display: inline-block;
+  width: 100%;
+}
