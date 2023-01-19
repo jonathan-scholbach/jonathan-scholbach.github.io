@@ -6,6 +6,10 @@ layout: post
 toc: true
 ---
 
+<div class="flowers">
+🌼🌼🌼🌻🌼
+</div>
+
 What does it mean to be exceptional? --- This is not just a question for artists
 and teenagers, but also for software developers. It touches the question how
 we should organize our code in a similar way it touches a society. And the
@@ -42,7 +46,7 @@ using `raise`, which if not caught in a `try`-`except` block, will make the
 program crash.
 
 The absence of a safeguarding mechanism forcing the developer to ensure that
-exceptions are caught, makes for quick prototyping. It also introduces a
+exceptions are caught makes for quick prototyping. It also introduces a
 potential fragility. While development speed is nice, fragility is technical
 debt and can become a pain quickly.
 
@@ -187,12 +191,38 @@ object is being used. And the same applies to exceptional scenarios in Python
 code.
 
 
-# 4. Structuring Code with Exceptions
+# 4. Structuring Code into Background and Foreground
 
 The meaning is defined by the use in our code. We cannot _understand_, we
 have to _decide_ what we want to consider an exception and what not; or,
-better: By returning or raising something, we implicitly shape the semantics
-in our code.
+to express this in a better way: By returning or raising, we structure our code
+in a certain way, sending the signal to the reader of our code: This is a matter
+of differentiating between relevant and irrelevant.
+
+This question is a matter of perception in general, and there is an abundance of
+examples for how differentiating between "foreground" and "background" shapes
+how we perceive and understand information. Just one example for this, from
+outside the coding world, is the way footnotes are being used in books: They
+manage to provide some information which would be a detour from the main road,
+while keeping the reader's attention to the main story. And, more than that,
+they give a clear signal, what is the important, the "core" information, and
+what is just "additional".
+
+![foreground-background.jpg](/assets/what-does-it-mean-to-be-exceptional/foreground-background.jpg){:width="60%"}
+*__With images, sometimes it can be hard to know what is foreground, what is
+background. What is relevant, what is irrelevant?__*
+
+![foreground-background.jpg](/assets/what-does-it-mean-to-be-exceptional/foreground-background-illusion.svg){:width="60%"}
+Another example, from coding software, is the paradigm of "early returning": By
+handling the validation and returning, the reader can focus.
+
+All of these strategies, to put some information in the background, have one
+thing in common: The reader can safely forget about some information, and they
+are made aware of this. That way, they only have to keep an active
+representation of the foreground information. That wa
+
+
+
 
 In order to discuss different strategies that we can apply, let's have a look at
 very common architecture with an entry point, a layer which performs some sort
@@ -464,7 +494,7 @@ exception, the caller can still decide to raise the exception, making use of the
 trace of the exception.
 
 
-## 5.3 Alternative Two (Improved): Result Wrapper
+## 5.3 Option Two (Improved): Result Wrapper
 
 In those cases, it makes sense to adopt the behavior Rust, Elixir and Go take:
 We can use a wrapper class to indicate the result or success in the function
@@ -496,6 +526,7 @@ class Err(Generic[ErrType]):
 
 Result = Ok[OkType] | Err[ErrType]
 {% endhighlight %}
+*__A rough code sketch how to implement a Rust-like Result Wrapper__*
 
 Here is an example of how to use it:
 
@@ -534,6 +565,12 @@ def to_age(value: str | int,) -> Result[Age, AgeOutOfRange | InvalidInput]:
 
     return Ok(Age(value))
 {% endhighlight %}
+
+If you are interested in using that approach, I recommend using the library
+[poltergeist](https://github.com/alexandermalyga/poltergeist){:target="_blank"} written by
+Alexander Malyga. While the code snippet above is not more than a rough sketch,
+his library is, and has some features which make adopting this paradigm more
+convenient.
 
 
 # 6. Shades of Grey: How to Trade-Off
