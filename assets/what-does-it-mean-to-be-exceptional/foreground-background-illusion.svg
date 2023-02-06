@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="150.9063mm"
+   height="180.33597mm"
+   viewBox="0 0 150.9063 180.33597"
    version="1.1"
    id="svg1377"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   sodipodi:docname="foregeground-background-illusion.svg">
+   sodipodi:docname="foreground-background-illusion.svg">
   <defs
      id="defs1371" />
   <sodipodi:namedview
@@ -25,11 +25,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="175.32507"
-     inkscape:cy="619.59"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="126.72832"
+     inkscape:cy="345.17379"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="2560"
      inkscape:window-height="1377"
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -52,23 +52,25 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Background"
-     style="display:inline" />
+     style="display:inline"
+     transform="translate(-19.65614,-20.304638)" />
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Middleground"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(-19.65614,-20.304638)">
     <rect
-       style="fill:#ffffff;fill-rule:evenodd;stroke-width:0.20920196"
+       style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.20764156"
        id="rect3583"
-       width="75"
-       height="150"
-       x="95.222923"
-       y="39.95731" />
+       width="79.061798"
+       height="149.66565"
+       x="91.161133"
+       y="40.29166" />
     <rect
-       style="display:inline;fill:#000000;fill-rule:evenodd;stroke-width:0.20920196"
+       style="display:inline;fill:#000000;fill-rule:evenodd;stroke-width:0.20338054"
        id="rect3583-8"
-       width="75"
+       width="70.884048"
        height="150"
        x="20.277082"
        y="39.95731" />
@@ -77,7 +79,8 @@
      inkscape:label="Blueprint"
      inkscape:groupmode="layer"
      id="layer1"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(-19.65614,-20.304638)">
     <g
        transform="translate(-194.58915,-68.284804)"
        id="g1952-6-2-2-7-7-0"
@@ -360,7 +363,7 @@
     <g
        id="g2931-5-5"
        transform="translate(13.122024,-154.42857)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -368,19 +371,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-5-8"
        transform="translate(23.122024,-124.42857)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -388,19 +391,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-3"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-1"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-5-89"
        transform="translate(43.122024,-164.42857)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -408,19 +411,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-6"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-4"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-5-3"
        transform="translate(33.122024,-94.428571)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -428,19 +431,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-33"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-8"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-5-6"
        transform="rotate(2,2481.8621,276.93626)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -448,19 +451,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-0"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-48"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-5-88"
        transform="translate(43.122024,-64.428571)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -468,19 +471,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-9"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-7"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-5-7"
        transform="translate(13.122024,-54.428571)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -488,19 +491,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-64"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-3"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-5-3-0"
        transform="rotate(26,306.01346,157.65397)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -508,19 +511,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-33-3"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-8-0"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-5-3-0-9"
        transform="rotate(61.999999,173.77395,143.28117)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -528,19 +531,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-33-3-2"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-8-0-5"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-5-3-4"
        transform="rotate(-4,-1017.2703,577.34821)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -548,19 +551,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-33-0"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-8-5"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        transform="rotate(90,90.052386,120.23182)"
        id="g3072-2-4-9"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-99.968384"
@@ -568,19 +571,19 @@
          height="10"
          width="20"
          id="rect2882-6-6-5-7-1-9-1-1-4"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.139972" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.139972" />
       <rect
          y="180.29166"
          x="79.968384"
          height="10"
          width="30.000002"
          id="rect2882-3-1-9-6-7-6-7-8-6"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-5-7-9"
        transform="rotate(-28,-36.15643,241.15377)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -588,14 +591,14 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-64-2"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-3-2"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        id="g2931-5-1-8-4"
@@ -680,7 +683,7 @@
     <g
        id="g2931-5-5-80"
        transform="rotate(-4,-2448.6804,526.20489)"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-66.846359"
@@ -688,19 +691,19 @@
          height="10"
          width="30.000002"
          id="rect2882-6-6-3-2"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
       <rect
          y="224.72023"
          x="46.846359"
          height="10"
          width="30.000002"
          id="rect2882-3-1-8-10"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <g
        transform="rotate(-178,78.659802,115.05125)"
        id="g3072-2-4-9-5"
-       style="fill:#ffffff;fill-opacity:1">
+       style="fill:#fdf6e3;fill-opacity:1">
       <rect
          transform="rotate(90)"
          y="-99.968384"
@@ -708,17 +711,17 @@
          height="10"
          width="20"
          id="rect2882-6-6-5-7-1-9-1-1-4-1"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.139972" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.139972" />
       <rect
          y="180.29166"
          x="79.968384"
          height="10"
          width="30.000002"
          id="rect2882-3-1-9-6-7-6-7-8-6-1"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
+         style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.17142999" />
     </g>
     <rect
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke-width:0.09897515"
+       style="fill:#fdf6e3;fill-opacity:1;fill-rule:evenodd;stroke-width:0.09897515"
        id="rect2882-6-6-3-6-8"
        width="10"
        height="10"
