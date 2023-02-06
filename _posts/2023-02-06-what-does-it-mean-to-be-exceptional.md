@@ -141,7 +141,7 @@ function could throw in the function signature.
 # 2. Micro- vs Macro-Structure
 
 When we look at the micro-structure of our code, when we are inspecting
-functions in isolation, raising an exception makes totally sense: In the example
+functions in isolation, raising an exception totally makes sense: In the example
 above, raising a `ValueError` is a good indication of what is going on. The
 semantics of the exception express the _intent_ of the code very directly. And
 that is always a good thing.
@@ -276,17 +276,13 @@ Another example, from coding software, is the paradigm of [early
 returning](https://medium.com/swlh/return-early-pattern-3d18a41bba8): By
 separating the validation logic from the business logic the reader can focus on
 the latter. As soon as the validation is over, the reader can forget about it.
-It has become IRRELEVANT, and the reader knows they can relax about it.
+It has become IRRELEVANT. The reader only has to keep an active representation
+of the FOREGROUND information in their current mental state which is stripped
+off BACKGROUND noise. Sending these signals that help the readers differentiate
+between FOREGROUND and BACKGROUND is a way to prevent them from feeling
+overwhelmed.
 
-All these examples, where some information is moved to the mental BACKGROUND,
-have one thing in common: The reader can not only safely forget about some
-information, but they are even made aware of this. That way, they only have to
-keep an active representation of the FOREGROUND information in their current
-mental state which is stripped off BACKGROUND noise. Failing to send signals
-that help the readers differentiate between FOREGROUND and BACKGROUND is a way
-to make the reader feel overwhelmed.
-
-And the same principle applies for `raise` vs `return`: Whatever is returned is
+The same principle applies for `raise` vs `return`: Whatever is returned is
 marked as FOREGROUND, as the mainstream of our program flow. Exceptions are
 pushed to the mental BACKGROUND.
 
@@ -407,8 +403,8 @@ necessarily indicate that anything in the request is _wrong_, if our database
 does not hold a matching movie.
 
 That means, we might have paths in our application, where we want to use the
-repository method, but do not want to treat a missing as an error. If that is
-the case, we would find ourselves implementing a structure to handle the
+repository method, but do not want to treat a missing movie as an error. If that
+is the case, we would find ourselves implementing a structure to handle the
 exception in the intermediate layers based on context -- which would break the
 beautiful simplicity of the bubbling-up approach and may make things messy
 quickly.
@@ -502,10 +498,10 @@ went wrong" when trying to create an instance of Age.__*
 
 
 Sometimes, we can also use the semantics of a return value in order to indicate
-an edge case. An example for this is the behavior `Array.prototoype().indexOf`
-in JavaScript: If `someArrray` does not contain `value`,
-`someArray.indexOf(value)` will be  `-1`. In JavaScript, string indexes can only
-be positive, so returning a negative index uses that deviation from the
+an edge case. An example for this is the behavior of
+`Array.prototoype().indexOf` in JavaScript: If `someArrray` does not contain
+`value`, `someArray.indexOf(value)` will be  `-1`. In JavaScript, array indexes
+can only be positive, so returning a negative index uses that deviation from the
 semantics in order to signal the occurrence of an edge case.[^negative_index]
 
 [^negative_index]:
@@ -521,8 +517,8 @@ A lot of scenarios can be covered by exploiting the semantics of the return valu
 But sometimes there are scenarios, where a meaningful return value is not
 enough.
 
-For instance, the above example from JavaScript returning `-1` as the index for an
-absent value is not super clear. For anybody who is not familiar with it
+For instance, the above example from JavaScript returning `-1` as the index for
+an absent value is not super clear. For anybody who is not familiar with it
 already, it would involve some guesswork to understand it. Also, and this is
 more important, the _type_ of the returned value is still an integer, so there
 is not type difference between the normal path and the exceptional path. The
@@ -554,8 +550,8 @@ ways.
 
 Another use case is that `None` is actually a valid value of the function.
 
-In those cases, a very clean approach is to create an exception, but return it
-instead of raising it:
+In those cases, a very clean approach is to create an exception, but to return
+it instead of raising it:
 
 {% highlight Python %}
 class NegativeAge(ValueError):
@@ -607,7 +603,8 @@ all exceptions are handled.
 {% highlight Python %}
 from typing import Generic, NoReturn, TypeVar
 
-OkType = TypeVar("OkType") ErrType = TypeVar("ErrType", bound=Exception)
+OkType = TypeVar("OkType")
+ErrType = TypeVar("ErrType", bound=Exception)
 
 class Ok(Generic[OkType]):
     def __init__(self, value: OkType) -> None:
