@@ -102,6 +102,36 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-fg) !important;
 }
 
+div.post-tags {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul.tags {
+  margin: auto;
+  list-style-type: None;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+ul.tags li {
+  margin-left: 0;
+  padding: 0 0.5em;
+  list-style-type: None;
+  background: var(--color-bg-darker);
+  color: var(--color-emph);
+  border-radius: 2px;
+  font-size: calc(0.8*var(--font-size));
+}
+
+.index > * > div.post-tags {
+  align-items: flex-start!important;
+}
+
 @media (min-width: 38rem) {
   .post {
     width: 28rem;
