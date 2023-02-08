@@ -1,7 +1,7 @@
 ---
 title: What Does It Mean to Be Exceptional?
 subtitle: How to Handle Exceptions [in Python].
-tags: [Conceptual Code, Exception, Technical Debt, Python]
+tags: [Conceptual Code, Exception Handling, Technical Debt, Python]
 layout: post
 toc: true
 ---
