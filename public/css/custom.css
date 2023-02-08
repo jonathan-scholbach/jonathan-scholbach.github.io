@@ -63,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 .index .post {
   border: 1px solid var(--color-fg);
   padding: var(--font-size) var(--font-size) 0 var(--font-size);
+  margin-bottom: var(--font-size);
 }
 
 .index .post-title {
@@ -72,6 +73,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .index .post-title a {
   color: var(--color-emph);
+}
+
+.index .post-date {
+  font-size: calc(0.8*var(--font-size));
 }
 
 
