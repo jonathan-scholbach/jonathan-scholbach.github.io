@@ -176,12 +176,19 @@ ul.tags li {
   color: var(--color-fg);
 }
 
-.post-title {
+.post-title, .series-title {
   font-weight: 800;
+}
+
+.post-title {
   margin-bottom: calc(2*var(--font-size));
 }
 
-.post-title .post-subtitle {
+.series-title {
+  font-size: var(--font-size)!important;
+}
+
+.post-title .post-subtitle, .series-subtitle {
   font-weight: 200;
 }
 

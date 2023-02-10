@@ -7,6 +7,16 @@ layout: default
 </div>
 
 <div class="post">
+  {% if page.series %}
+  <h1 class="series-title">
+    {{ page.series }}
+    {% if page.series_subtitle %}
+      <span class="series-subtitle">{{ page.series_subtitle }}</span>
+    {% endif %}
+  </h1>
+  </h1>
+  {%endif %}
+
   <h1 class="post-title">
     {{ page.title }}
     {% if page.subtitle %}
