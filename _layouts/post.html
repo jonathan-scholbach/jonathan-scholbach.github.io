@@ -20,10 +20,7 @@ layout: default
   {%endif %}
 
   <h1 class="post-title">
-    {{ page.title }}
-    {% if page.subtitle %}
-      <span class="post-subtitle">{{ page.subtitle }}</span>
-    {% endif %}
+    {% include posttitle.html post=page %}
   </h1>
   <div class="post-version">
     {% if page.version %}{% include versionlink.html post=page %}{% endif %}

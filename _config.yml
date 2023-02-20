@@ -11,6 +11,9 @@ kramdown:
   input:             GFM
   hard_wrap: false
   syntax_highlighter: rouge
+  typographic_symbols:
+      ndash: –
+      mdash: —
 
 # About/contact
 author:

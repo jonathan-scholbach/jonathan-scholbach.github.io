@@ -19,8 +19,8 @@ title: Home
       {% include seriestitle.html series=postseries %}
     {%endif %}
     <h1 class="post-title">
-      <a href="{{ post.url | absolute_url }}">{{ post.title }}
-        {% if post.subtitle %}<span class="post-subtitle">{{ post.subtitle}}</span>{% endif %}
+      <a href="{{ post.url | absolute_url }}">
+        {% include posttitle.html %}
       </a>
     </h1>
 

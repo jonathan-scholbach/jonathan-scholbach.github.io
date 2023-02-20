@@ -1,6 +1,6 @@
 ---
-title: Everyone is Perfectly Rational, Always.
-subtitle: At Least, We Should Assume So.
+title: Everyone is Perfectly Rational, Always
+subtitle: At Least, We Should Assume So
 tags: [Collaboration, Culture, Psychology, Philosophy]
 layout: post
 version: 1.0.1
