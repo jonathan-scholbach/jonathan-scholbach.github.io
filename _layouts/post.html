@@ -6,15 +6,17 @@ layout: default
   {% include toc.html html=content %}
 </div>
 
+{% assign postseries = null %}
+{% for series in site.series %}
+  {% if series.title == page.seriestitle %}
+     {% assign postseries = series %}
+     {% break %}
+  {% endif %}
+{% endfor %}
+
 <div class="post">
-  {% if page.series %}
-  <h1 class="series-title">
-    {{ page.series }}
-    {% if page.series_subtitle %}
-      <span class="series-subtitle">{{ page.series_subtitle }}</span>
-    {% endif %}
-  </h1>
-  </h1>
+  {% if postseries %}
+    {% include seriestitle.html series=postseries %}
   {%endif %}
 
   <h1 class="post-title">
@@ -28,5 +30,16 @@ layout: default
       {% for tag in page.tags %}<li> {{ tag }}</li>{% endfor %}
     </ul>
   </div>
-  {{ content }}
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if postseries %}
+    <div class="series-info">
+      <p>This post is part of a series: {% include seriestitle.html
+      series=postseries %}</p>
+
+      {% include serieslist.html series=postseries %}
+    </div>
+  {% endif %}
 </div>

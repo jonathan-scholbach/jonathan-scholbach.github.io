@@ -1,0 +1,13 @@
+<div class='series-posts'>
+  <ul class='series-posts-list'>
+    {% for post in site.posts reversed %}
+      {% if include.series.title == post.seriestitle %}
+      <li>
+        <a href='{{ post.url | absolute_url }}'>
+          {% include posttitle.html post=post%}
+        </a>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
