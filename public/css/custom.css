@@ -200,6 +200,41 @@ h1 > .series-subtitle {
   font-weight: 200;
 }
 
+.post-version {
+  display: flex;
+  margin-bottom: calc(0.8*var(--font-size));
+}
+
+.versionlink {
+  margin-left: auto;
+  font-size: calc(0.8*var(--font-size));
+  display: inline-block;
+  position: relative;
+}
+
+.versionlink .tooltip {
+  visibility: hidden;
+  font-size: calc(0.6*var(--font-size));
+  background-color: var(--color-link);
+  color: var(--color-bg);
+  text-align: center;
+  padding: 2px 5px;
+  width: 16em;
+  border-radius: 5px;
+
+  z-index: 1;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+}
+
+.versionlink:hover .tooltip {
+  visibility: visible;
+}
+
+a.versionlink:hover {
+
+}
 .post-date {
   text-align: right;
   color: var(--color-fg);

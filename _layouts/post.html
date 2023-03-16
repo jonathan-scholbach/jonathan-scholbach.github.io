@@ -25,6 +25,9 @@ layout: default
       <span class="post-subtitle">{{ page.subtitle }}</span>
     {% endif %}
   </h1>
+  <div class="post-version">
+    {% if page.version %}{% include versionlink.html post=page %}{% endif %}
+  </div>
   <div class="post-tags">
     <ul class="tags">
       {% for tag in page.tags %}<li> {{ tag }}</li>{% endfor %}
