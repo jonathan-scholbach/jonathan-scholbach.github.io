@@ -3,6 +3,7 @@ title: Everyone is Perfectly Rational, Always.
 subtitle: At Least, We Should Assume So.
 tags: [Collaboration, Culture, Psychology, Philosophy]
 layout: post
+version: 1.0.1
 toc: true
 ---
 
@@ -10,15 +11,15 @@ toc: true
 🌻
 </div>
 
-When we are in conflict with others, we sometimes start to believe that they are
+When we are in conflict with others, we sometimes start to believe they are
 _irrational_.
 
 This article makes the case why we should always assume that our counterpart in
 a collaborative relation is acting in a perfectly rational manner. The argument
 has two parts: First, starting from a definition of rationality, we will see
 that we can never actually know whether our counterpart is rational. Second, as
-the argument goes, for pragmatic reasons in our own self-interest, we should
-always assume that our counterpart is perfectly rational.
+the argument goes, we should always assume that our counterpart is perfectly
+rational for pragmatic reasons in our own self-interest.
 
 The article is a reflection on psychological phenomena occurring in discussions
 and conflict. It unfolds a model of human beings and interactions which aims at
@@ -63,16 +64,17 @@ does not give us access to their preferences. Since the rationality of a
 certain behavior depends on these unknown preferences, we cannot tell whether a
 person is acting rationally from their behavior alone.
 
-[^nb]: Saying that it is _a fallacy_ to conclude that a person is irrational
-    does not mean that the person is rational. It may or may not be true that
-    the person is irrational. Here, the argument merely states that we cannot
-    know, based on the behavior of the person alone.
+[^nb]:
+    Saying that it is _a fallacy_ to conclude that a person is irrational does
+    not mean that the person is rational. It may or may not be true that the
+    person is irrational. Here, the argument merely states that we cannot know,
+    based on the behavior of the person alone.
 
 Asking "Is this behavior rational?" without knowing the preferences is similar
 to asking "Is a hammer a good tool?" without knowing what we want to achieve.
 Whether the hammer is a good tool, certainly depends on the goal we want to
 achieve with it. When we need to get a nail into a wall, a hammer may be a good
-instrument. When we want to cure our headache, or clean our windows we better
+instrument. When we want to cure our headache, or clean our windows, we better
 look for something else.
 
 The above does not only apply to what a person is doing, but also to what
@@ -165,23 +167,23 @@ making process of this person works.[^coherence]
 
 [^coherence]:
     The same argument applies to approaches trying to define rationality in
-    terms of _global coherence_ of th actions of a person. The famous example is
+    terms of _global coherence_ of the actions of a person. The famous example is
     a person with an overall preference for health. When they smoke, the theory
     of coherence goes, they are acting irrationally because they are not acting
-    in a globally coherent way. But this actually just a problem in describing
-    the person's preferences, not a problem with the person's preferences
-    themselves. The premise of _globally coherent preferences_ is undercomplex
-    and fails at accurately describing the actual preferences of the person:
-    They might want to be healthy, but they also crave a cigarette right now.
-    That is a more complex model than saying "They want to be healthy, and
-    smoking a cigarette right now is irrational." It also opens questions like
-    "Why do they want to smoke a cigarette right now?", opening paths to
-    changing that decision making. Instead of imposing an overly simplified
-    model on the smoking person, a more complex model of "mixed preferences",
-    "stratified preferences" or "context-sensitive preferences" provides a
-    better understanding of the person's decision making (when we say that a
-    certain model is a "better understanding of a system", if it provides more
-    options to change that system).
+    in a globally coherent way. But this is actually just a problem in
+    _describing_ the person's preferences, not a problem with the person's
+    preferences themselves. The premise of globally coherent preferences is
+    undercomplex and fails at accurately describing the actual preferences of
+    the person: They might want to be healthy, but they also crave a cigarette
+    right now. That is a more complex model than saying "They want to be
+    healthy, and smoking a cigarette right now is irrational." It also gives
+    raise to questions like "Why do they want to smoke a cigarette right now?",
+    opening paths to changing that decision making. Instead of imposing an
+    overly simplified model on the smoking person, a more complex model of
+    "mixed preferences", "stratified preferences" or "context-sensitive
+    preferences" provides a better understanding of the person's decision making
+    (when we say that a certain model is a "better understanding of a system",
+    if it provides more options to change that system).
 
 If instead, we assume that the other person is rational, we have to search for a
 difference in their preferences and motives in order to explain their
