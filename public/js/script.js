@@ -1,15 +1,35 @@
-(function(document) {
-  var toggle = document.querySelector('.sidebar-toggle');
-  var sidebar = document.querySelector('#sidebar');
-  var checkbox = document.querySelector('#sidebar-checkbox');
+;(function (document) {
+  var toggle = document.querySelector('.sidebar-toggle')
+  var sidebar = document.querySelector('#sidebar')
+  var checkbox = document.querySelector('#sidebar-checkbox')
+  var toc = document.querySelector('.toc')
 
-  document.addEventListener('click', function(e) {
-    var target = e.target;
+  function displayTOC() {
+    const width = document.body.clientWidth
+    toc.style.display = width > 1900 ? 'block' : 'none'
+  }
 
-    if(!checkbox.checked ||
-       sidebar.contains(target) ||
-       (target === checkbox || target === toggle)) return;
+  const resizeObserver = new ResizeObserver(() => {
+    displayTOC()
+  })
 
-    checkbox.checked = false;
-  }, false);
-})(document);
+  resizeObserver.observe(document.body)
+
+  document.addEventListener(
+    'click',
+    function (e) {
+      var target = e.target
+
+      if (
+        !checkbox.checked ||
+        sidebar.contains(target) ||
+        target === checkbox ||
+        target === toggle
+      )
+        return
+
+      checkbox.checked = false
+    },
+    false
+  )
+})(document)

@@ -6,8 +6,8 @@ layout: series
 
 The idea of _Conceptual Code_ crystallized in my mind over years of thinking
 about code. While discussing specifics of certain problems with other software
-developers, I noticed that my thinking about coding benefits from my studies in
-literature, cognitive sciences and neurobiology.
+developers, I noticed that my thinking about coding is heavily influenced by my
+studies in literature, philosophy, cognitive sciences and neurobiology.
 
 The series is an attempt to describe the common denominator of these fields with
 software craft: The idea that in order to write smooth software code, it is a

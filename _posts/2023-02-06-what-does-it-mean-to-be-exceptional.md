@@ -1,6 +1,6 @@
 ---
 title: What Does It Mean to Be Exceptional
-title_ending: "?"
+title_ending: '?'
 subtitle: How to Handle Exceptions [in Python]
 tags: [Conceptual Code, Exception Handling, Technical Debt, Python]
 layout: post
@@ -35,7 +35,6 @@ attention.
 This article discusses different strategies of working with exceptions. The main
 story is about Python, but basic insights can be applied to other programming
 languages as well.
-
 
 # 1. Exceptions in Different Languages
 
@@ -72,7 +71,7 @@ path_ and the _error path_ can actually be expressed as different paths in the
 code. This allows for rather complex error paths without loosing track of what
 is going on:
 
-{% highlight Elixir %}
+```elixir
 def to_age(value) when is_binary(value) do
   # Transforming string to integer here and pass result to integer handling
   # branch of `to_age`
@@ -103,22 +102,24 @@ end
 def to_age(value) do
   { :error, "Age value must be a binary string or an integer" }
 end
-{% endhighlight %}
-*__An example of using pattern matching on the function signature to handle
-different exceptional cases, in Elixir: `to_age` handles both integers and
-strings that either contain an integer (ok) or not (error). In both cases the
-integer is checked for being positive and not bigger than some maximum value.__*
+```
+
+<p class="caption" markdown="1">An example of using pattern matching on the
+function signature to handle different exceptional cases, in Elixir: `to_age`
+handles both integers and strings that either contain an integer (ok) or not
+(error). In both cases the integer is checked for being positive and not bigger
+than some maximum value.</p>
 
 Just for comparison, this is a way the same could be achieved in Python, raising
 a `ValueError` whenever some validation fails:
 
-{% highlight Python %}
+```python
 def to_age(value: int | str) -> Age:
-    if isinstance(value, str):
-        try:
-            value = int(value)
-        except ValueError:
-            raise ValueError("Age string must hold an integer number")
+if isinstance(value, str):
+try:
+value = int(value)
+except ValueError:
+raise ValueError("Age string must hold an integer number")
 
     if not isinstance(value, int):
         raise ValueError("Age value must be a string or integer")
@@ -132,12 +133,11 @@ def to_age(value: int | str) -> Age:
             "got 122. Are you sure you are older?"
         )
     return Age(value)
-{% endhighlight %}
+```
 
 In other strongly typed languages, for instance Java, it is possible to throw
 exceptions, but the developer has to declare all the possible exceptions a
 function could throw in the function signature.
-
 
 # 2. Micro- vs Macro-Structure
 
@@ -189,7 +189,6 @@ This can cause trouble.
     type signature of a method) and Python when it comes to the meaning of
     exceptions.
 
-
 # 3. Difference between Returning and Raising
 
 From this point of view, raising an exception merely appears as some sort of
@@ -199,29 +198,26 @@ _essential difference_ between returning and raising?
 
 Well, there is none, really. Have a look at the following code snippet:
 
-
-{% highlight Python %}
+```python
 from typing import NoReturn
 
-
 class ResultDisguisedAsException(Exception):
-    def __init__(self, value: Any) -> None:
-        self.value = value
+def **init**(self, value: Any) -> None:
+    self.value = value
 
-
-def function(value: int) -> NoReturn:
-    # ... (apply some operations to value here)
+def function(value: int) -> NoReturn: # ... (apply some operations to value here)
     raise ResultBeingRaised(value)
-
 
 def caller():
     try:
         function(1)
     except ResultDisguisedAsException as result:
         # ... (do something with result.value here)
-{% endhighlight %}
-*__A way to replace return statements by raise statements, demonstrating that
-there is no essential difference between raising and returning.__*
+```
+
+<p class="caption">A way to replace return statements by raise statements,
+demonstrating that there is no essential difference between raising and
+returning.</p>
 
 In this snippet, `function` basically responds by raising an exception instead
 of returning a value. `caller` does not use the returned value (`function`
@@ -229,7 +225,7 @@ does never return, actually), but inspects the exception in order to get the
 what would be the return value in a normal program flow. This code snippet is
 somewhere between academic and ridiculous, of course. But it demonstrates that
 there is no _essential_ difference between raising and returning: Logically, any
-Python program using methods with `return` statements, could  be rewritten using
+Python program using methods with `return` statements, could be rewritten using
 `raise` statements exclusively.
 
 That shows that the difference between raising and returning is _arbitrary_,
@@ -242,7 +238,6 @@ essential characteristics of a gift?" -- Anything can be a gift. Whether a
 certain object is a gift or not, cannot be found in the specifics of that
 object, it can only be found in the way that object is being used. And the same
 holds true for exceptional scenarios in Python code.
-
 
 # 4. Structuring Code into Background and Foreground
 
@@ -270,8 +265,10 @@ to the main story. And, more than that, they give a clear signal, what is the
 important, the CORE information, and what is EXTRA.
 
 ![foreground-background.jpg](/assets/what-does-it-mean-to-be-exceptional/foreground-background-illusion.svg){:width="60%"}
-*__Sometimes it is hard to grasp what is foreground, what is background. What is
-relevant, what is irrelevant? This confusion is mentally stressful.__*
+
+<p class="caption">Sometimes it is hard to grasp what is foreground, what is
+background. What is relevant, what is irrelevant? This confusion is mentally
+stressful.</p>
 
 Another example, from coding software, is the paradigm of [early
 returning](https://medium.com/swlh/return-early-pattern-3d18a41bba8): By
@@ -287,7 +284,6 @@ The same principle applies for `raise` vs `return`: Whatever is returned is
 marked as FOREGROUND, as the mainstream of our program flow. Exceptions are
 pushed to the mental BACKGROUND.
 
-
 # 5. Exception Handling Paradigms
 
 In order to discuss different strategies that we can apply, let's have a look at
@@ -298,7 +294,8 @@ layer") which handles reading and writing of data, abstracting away the
 specifics of the data storage:
 
 ![layered architecture](/assets/what-does-it-mean-to-be-exceptional/layered-architecture.svg)
-*__Abstract Minimal Structure of a Layered Architecture.__*
+
+<p class="caption">Abstract Minimal Structure of a Layered Architecture.</p>
 
 Consider, for instance, a GET endpoint in a REST API, which is requesting a
 single movie from our database, based on some filter criteria (such as title,
@@ -307,7 +304,6 @@ language, director, or starring actresses and actors, and so on).
 The real life example could of course be more complex. We are focussing on the
 elements that are relevant to demonstrate the up- and downsides of different
 exception handling strategies here.
-
 
 ## 5.1 Bubbling Up
 
@@ -319,42 +315,39 @@ simply ignore exceptions on lower layers, taking some complexity off their
 shoulders:
 
 ![bubbling-up](/assets/what-does-it-mean-to-be-exceptional/bubbling-up.svg)
-*__Having Exceptions bubble up means not handling them in intermediate layers.__*
+
+<p class="caption">Having Exceptions bubble up means not handling them in
+intermediate layers.</p>
 
 In a rough code sketch, this would look like this:
 
-{% highlight Python %}
+```python
 class NotFound(Exception):
     pass
 
-
-def load_movie_by_filters(filters) -> Movie:
-    # Skipping db implementation part of this layer
+def load_movie_by_filters(filters) -> Movie: # Skipping db implementation part of this layer
     matches: list[Movie] = MovieDatabase.filter(filters)
     if not matches:
         raise NotFound()
     return matches[0]
 
-
-def movie_filter_service(filters) -> Movie:
-    # Skipping business logic part of this layer
+def movie_filter_service(filters) -> Movie: # Skipping business logic part of this layer
     return load_movie_by_filters(filters)
 
-
-def movie_filter_controller(filters) -> Movie:
-    # Skipping validation logic part of this layer
+def movie_filter_controller(filters) -> Movie: # Skipping validation logic part of this layer
     return movie_filter_service(filters)
 
-
-def entry_point(filters):
+def entry\*point(filters):
     try:
-       return movie_filter_controller(filters)
+        return movie_filter_controller(filters)
     except NotFound:
-       print("Movie could not be found")
-{% endhighlight %}
-*__Minimal Code Example For a Layered Architecture with Exceptions Bubbling Up.
-The example code is not meant to serve as a real-world example. It should only
-provide some orientation about the code structure we are talking about.__*
+        print("Movie could not be found")
+```
+
+<p class="caption">Minimal Code Example For a Layered Architecture with
+Exceptions Bubbling Up. The example code is not meant to serve as a real-world
+example. It should only provide some orientation about the code structure we are
+talking about.</p>
 
 The snippet demonstrates, how the intermediate layers do not care about the
 exception at all. The exception is passed upwards without the intermediate
@@ -414,7 +407,6 @@ That emphasizes the fact that our implementation of the repository has to be
 understood _in the context_ of the rest of our program. And that is an
 indication of a lack of decoupling.
 
-
 ## 5.2 Shadow Control Flow
 
 If our code logic is very simple, it might be a good advice to leverage the
@@ -438,8 +430,9 @@ the context it was raised in. That is messy.
 ![Introducing a shadow control flow where services sometimes handle exceptions,
 sometimes not, is
 messy](/assets/what-does-it-mean-to-be-exceptional/shadow-control-flow.svg)
-*__In a shadow control flow, exceptions are handled on a case-to-case basis. It
-quickly gets messy and hard to trace.__*
+
+<p class="caption">In a shadow control flow, exceptions are handled on a
+case-to-case basis. It quickly gets messy and hard to trace.</p>
 
 That is how the bubbling up strategy is at risk of deteriorating into a "shadow
 control flow". It is "in the shadow", because it is a second control flow which
@@ -448,7 +441,6 @@ returning, but is working "behind the scenes".
 
 The underlying problem is the coupling of the repository layer
 with the controller layer.
-
 
 ## 5.3 Watertight Exception Handling
 
@@ -478,7 +470,6 @@ Hence, let's have a look at how a paradigm of indicating exceptional behavior
 through the return value of the function instead of through raising an expression
 can be applied:
 
-
 # 6. Returning Instead of Raising
 
 ## 6.1 Meaningful Return Values
@@ -488,20 +479,20 @@ Most often, returning `None` is a good indication: Whenever a function is
 supposed to calculate a result, or retrieve a value, `None` may indicate
 exceptional program flow.
 
-{% highlight Python %}
-def age_from_years(years: int) -> Age | None:
-    if years < 0:
-        return None
-    return Age(years)
-{% endhighlight %}
-*__This code example uses a return value of None to indicate that "something
-went wrong" when trying to create an instance of Age.__*
+```python
+def age\*from_years(years: int) -> Age | None:
+if years < 0:
+return None
+return Age(years)
+```
 
+<p class="caption">This code example uses a return value of None to indicate that "something
+went wrong" when trying to create an instance of Age.</p>
 
 Sometimes, we can also use the semantics of a return value in order to indicate
 an edge case. An example for this is the behavior of
 `Array.prototoype().indexOf` in JavaScript: If `someArrray` does not contain
-`value`, `someArray.indexOf(value)` will be  `-1`. In JavaScript, array indexes
+`value`, `someArray.indexOf(value)` will be `-1`. In JavaScript, array indexes
 can only be positive, so returning a negative index uses that deviation from the
 semantics in order to signal the occurrence of an edge case.[^negative_index]
 
@@ -511,7 +502,6 @@ semantics in order to signal the occurrence of an edge case.[^negative_index]
     meaning as in JavaScript.
 
 A lot of scenarios can be covered by exploiting the semantics of the return value.
-
 
 ## 6.2 Returning an Exception
 
@@ -535,13 +525,14 @@ Potentially returning `None` is usually a clearer signal. A function potentially
 returning `None` exposes the exceptional flow nicely in the type definition of the
 return value. Not handling the edge case will make the type checker warn us:
 
-{% highlight Python %}
+```python
 def position(string: str, char: str) -> int | None: try:
-    return string.index(char) except ValueError: return None
+return string.index(char) except ValueError: return None
 
 # typechecker won't accept this:
+
 x: int = position("abc", "d")
-{% endhighlight %}
+```
 
 But still, sometimes we need more: Sometimes, we want to express not just that
 "something went wrong", but we also want to be able to differentiate between
@@ -554,27 +545,27 @@ Another use case is that `None` is actually a valid value of the function.
 In those cases, a very clean approach is to create an exception, but to return
 it instead of raising it:
 
-{% highlight Python %}
+```python
 class NegativeAge(ValueError):
     pass
-
 
 class IncredibleAge(ValueError):
     pass
 
-
 def age_from_years(
-    years: int,
+  years: int,
 ) -> Age | NegativeAgeException | IncredibleAgeException:
     if years < 0:
-        return NegativeAgeException(years)
+       return NegativeAgeException(years)
     if years > 122:
         return IncredibleAgeException(years)
 
     return Age(years)
-{% endhighlight %}
-*__An example of returning different exceptions for different scenarios. The
-different scenarios are nicely expressed in the function's type signature.__*
+```
+
+<p class="caption">An example of returning different exceptions for different
+scenarios. The different scenarios are nicely expressed in the function's type
+signature.</p>
 
 This is a way of making the exception handling more robust. Now the possible
 exceptions are part of the type annotation of a function. This makes the control
@@ -583,7 +574,6 @@ the type checker will warn us if we forgot to handle an exceptional path. If,
 for some reason, we want our program to actually panic with the correct
 exception, the caller can still decide to raise the exception, making use of the
 trace of the exception.
-
 
 ## 6.3 Result Wrapper
 
@@ -601,43 +591,42 @@ The following code snippet is a sketch of an implementation of this approach in
 Python. Effectively, this opens the door of using the type checker to ensure that
 all exceptions are handled.
 
-{% highlight Python %}
+```python
 from typing import Generic, NoReturn, TypeVar
 
 OkType = TypeVar("OkType")
 ErrType = TypeVar("ErrType", bound=Exception)
 
 class Ok(Generic[OkType]):
-    def __init__(self, value: OkType) -> None:
-        self._value: OkType = value
+def **init**(self, value: OkType) -> None:
+self.\_value: OkType = value
 
     def unwrap(self) -> OkType:
         return self._value
 
 class Err(Generic[ErrType]):
-    def __init__(self, error: ErrType) -> None:
-        self._error = error
+def **init**(self, error: ErrType) -> None:
+self.\_error = error
 
     def unwrap(self) -> NoReturn:
         raise self._error
 
 Result = Ok[OkType] | Err[ErrType]
-{% endhighlight %}
-*__A rough code sketch how to implement a Rust-like Result Wrapper__*
+```
+
+<p class="caption">A rough code sketch how to implement a Rust-like Result
+Wrapper</p>
 
 Here is an example of how to use it:
 
-{% highlight Python %}
+```python
 from sys import exc_info
-
 
 class AgeOutOfRange(ValueError):
     pass
 
-
 class InvalidInput(ValueError):
     pass
-
 
 def to_age(value: str | int,) -> Result[Age, AgeOutOfRange | InvalidInput]:
     try:
@@ -661,7 +650,7 @@ def to_age(value: str | int,) -> Result[Age, AgeOutOfRange | InvalidInput]:
         ))
 
     return Ok(Age(value))
-{% endhighlight %}
+```
 
 If you are interested in using the approach of a `Result` wrapper, I recommend
 looking into the
@@ -676,7 +665,6 @@ make adopting this paradigm more convenient.[^malyga]
     Overflow](https://stackoverflow.com/a/74192977/3566606). The library is
     still work in progress. If you find the overall approach interesting, it
     might make sense to help build additional features.
-
 
 # 7. Shades of Grey: How to Trade-Off
 

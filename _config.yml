@@ -1,25 +1,25 @@
 # Setup
-title:               'jonathan-scholbach.github.io'
-tagline:             'Thoughts on Computer Programming 🌻'
+title: 'jonathan-scholbach.github.io'
+tagline: 'Thoughts on Computer Programming 🌻'
 description:
-url:                 'https://jonathan-scholbach.github.io'
-paginate:            5
-permalink:           pretty
-markdown:            kramdown
-highlighter:         rouge
+url: 'https://jonathan-scholbach.github.io'
+paginate: 5
+permalink: pretty
+markdown: kramdown
+highlighter: rouge
 kramdown:
-  input:             GFM
+  input: GFM
   hard_wrap: false
   syntax_highlighter: rouge
   typographic_symbols:
-      ndash: –
-      mdash: —
+    ndash: –
+    mdash: —
 
 # About/contact
 author:
-  name:              Jonathan Scholbach
+  name: Jonathan Scholbach
   url:
-  email:             j.scholbach@posteo.de
+  email: j.scholbach@posteo.de
 
 # Gems
 plugins:
@@ -29,9 +29,9 @@ plugins:
   - jekyll-seo-tag
 
 # Custom vars
-version:             1.1.0
+version: 1.1.0
 google_analytics_id: G-1HBN305G9K
-repository_url:      'https://github.com/jonathan-scholbach/jonathan-scholbach.github.io/'
+repository_url: 'https://github.com/jonathan-scholbach/jonathan-scholbach.github.io/'
 
 collections:
   series:
