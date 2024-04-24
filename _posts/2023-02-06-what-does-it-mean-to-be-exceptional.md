@@ -5,6 +5,7 @@ subtitle: How to Handle Exceptions [in Python]
 tags: [Conceptual Code, Exception Handling, Technical Debt, Python]
 layout: post
 toc: true
+version: 1.0.1
 ---
 
 <div class="flowers">
@@ -115,11 +116,11 @@ a `ValueError` whenever some validation fails:
 
 ```python
 def to_age(value: int | str) -> Age:
-if isinstance(value, str):
-try:
-value = int(value)
-except ValueError:
-raise ValueError("Age string must hold an integer number")
+    if isinstance(value, str):
+      try:
+          value = int(value)
+      except ValueError:
+         raise ValueError("Age string must hold an integer number")
 
     if not isinstance(value, int):
         raise ValueError("Age value must be a string or integer")
@@ -202,8 +203,8 @@ Well, there is none, really. Have a look at the following code snippet:
 from typing import NoReturn
 
 class ResultDisguisedAsException(Exception):
-def **init**(self, value: Any) -> None:
-    self.value = value
+    def __init__(self, value: Any) -> None:
+        self.value = value
 
 def function(value: int) -> NoReturn: # ... (apply some operations to value here)
     raise ResultBeingRaised(value)
@@ -325,19 +326,22 @@ In a rough code sketch, this would look like this:
 class NotFound(Exception):
     pass
 
-def load_movie_by_filters(filters) -> Movie: # Skipping db implementation part of this layer
+def load_movie_by_filters(filters) -> Movie:
+    # Skipping db implementation part of this layer
     matches: list[Movie] = MovieDatabase.filter(filters)
     if not matches:
         raise NotFound()
     return matches[0]
 
-def movie_filter_service(filters) -> Movie: # Skipping business logic part of this layer
+def movie_filter_service(filters) -> Movie:
+    # Skipping business logic part of this layer
     return load_movie_by_filters(filters)
 
-def movie_filter_controller(filters) -> Movie: # Skipping validation logic part of this layer
+def movie_filter_controller(filters) -> Movie:
+    # Skipping validation logic part of this layer
     return movie_filter_service(filters)
 
-def entry\*point(filters):
+def entry_point(filters):
     try:
         return movie_filter_controller(filters)
     except NotFound:
@@ -480,10 +484,10 @@ supposed to calculate a result, or retrieve a value, `None` may indicate
 exceptional program flow.
 
 ```python
-def age\*from_years(years: int) -> Age | None:
-if years < 0:
-return None
-return Age(years)
+def age_from_years(years: int) -> Age | None:
+    if years < 0:
+        return None
+    return Age(years)
 ```
 
 <p class="caption">This code example uses a return value of None to indicate that "something
@@ -526,8 +530,11 @@ returning `None` exposes the exceptional flow nicely in the type definition of t
 return value. Not handling the edge case will make the type checker warn us:
 
 ```python
-def position(string: str, char: str) -> int | None: try:
-return string.index(char) except ValueError: return None
+def position(string: str, char: str) -> int | None:
+    try:
+        return string.index(char)
+    except ValueError:
+        return None
 
 # typechecker won't accept this:
 
@@ -598,15 +605,15 @@ OkType = TypeVar("OkType")
 ErrType = TypeVar("ErrType", bound=Exception)
 
 class Ok(Generic[OkType]):
-def **init**(self, value: OkType) -> None:
-self.\_value: OkType = value
+    def __init__(self, value: OkType) -> None:
+        self._value: OkType = value
 
     def unwrap(self) -> OkType:
         return self._value
 
 class Err(Generic[ErrType]):
-def **init**(self, error: ErrType) -> None:
-self.\_error = error
+    def __init__(self, error: ErrType) -> None:
+        self._error = error
 
     def unwrap(self) -> NoReturn:
         raise self._error
