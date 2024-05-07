@@ -1,8 +1,0 @@
-{% assign post = include.post %}
-
-{{ post.title }}{{ post.title_ending | default: '.' }}
-{% if post.subtitle %}
-  <span class="post-subtitle">
-    {{ post.subtitle }}{{ post.subtitle_ending | default: '.'}}
-  </span>
-{% endif %}
